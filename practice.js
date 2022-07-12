@@ -44,4 +44,34 @@ const printStars = (n) => {
   }
 };
 
-printStars(6);
+// printStars(6);
+
+// Object, Variables, Functions, Methods, Control Flow (if)
+
+const temperatureCalculator = (tempNum, tempOri, tempDest) => {
+  const object = {
+    C: {
+      F: (9 / 5) * tempNum,
+      K: 273.15 + tempNum,
+    },
+    F: {
+      C: ((tempNum - 32) * 5) / 9,
+      K: ((tempNum - 32) * 5) / 9 + 273.15,
+    },
+    K: {
+      C: tempNum - 273.15,
+      F: ((tempNum - 273.15) * 9) / 5 + 32,
+    },
+  };
+
+  tempOri = tempOri.charAt(0).toUpperCase();
+  tempDest = tempDest.charAt(0).toUpperCase();
+
+  if (!object[tempOri][tempDest]) {
+    throw new Error("Please check your parameters.");
+  }
+
+  console.log(`${object[tempOri][tempDest]} ${tempDest}`);
+};
+
+temperatureCalculator(89, "f", "k");
