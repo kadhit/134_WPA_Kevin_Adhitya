@@ -74,4 +74,20 @@ const temperatureCalculator = (tempNum, tempOri, tempDest) => {
   console.log(`${object[tempOri][tempDest]} ${tempDest}`);
 };
 
-temperatureCalculator(89, "f", "k");
+// temperatureCalculator(89, "f", "k");
+
+// Destructuring
+
+const arrayReverse = (array) => {
+  const length = array.length;
+  for (let i = 0; i < length / 2; i++) {
+    [left, right] = [array[i], array[length - 1 - i]];
+    let temp = left;
+    left = right;
+    right = temp;
+    [array[i], array[length - 1 - i]] = [left, right]
+  }
+  return array;
+};
+
+console.log(arrayReverse([2, 3, 4, 5, 6, 7]));
