@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <nav id="navbar" class="position-fixed top-0 start-0 h-auto w-100 py-4 text-dark">
+      <div class="container container-xl">
+        <div class="row d-flex justify-content-around">
+          <div class="col-2 col-md">
+            <a href="#main">
+              <div id="logo" class="logo">MY<span class="fw-bolder">LOGO</span></div>
+            </a>
+          </div>
+          <div class="col-6 col-md">
+            <ul class="nav justify-content-around">
+              <li><a href="#about-us">About</a></li>
+              <li><a href="">Our Work</a></li>
+              <li><a href="">Our Clients</a></li>
+              <li><a href="">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div id="main" class="flex vh-100 text-dark">
+      <div class="container-xl">
+        <div class="row vh-100 d-flex justify-content-around align-items-center">
+          <div class="col-auto col-sm-4">
+            <h1 id="hero" class="fw-bolder">Beautify your website today.</h1>
+          </div>
+          <div class="col-auto col-sm-5">
+            <h4 class="fw-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sed, reiciendis vero repellat harum quis iure laborum eligendi animi ipsum facilis expedita exercitationem in quam iusto vitae officiis. Rerum excepturi doloremque, eum deleniti corporis rem impedit, debitis similique sint esse culpa quam illo? Cum, sit deleniti voluptates cumque vel ex!</h3>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="about-us" class="flex vh-100 justify-content-evenly text-white bg-secondary bg-gradient">
+      <div class="container container-xl">
+        <div class="row vh-100 d-flex justify-content-around align-items-center">
+          <div class="col-auto col-sm-6">
+            <h1 id="about-us-title" class="fw-bolder">About us</h1>
+            <h4 class="fw-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sed, reiciendis vero repellat harum quis iure laborum eligendi animi ipsum facilis expedita exercitationem in quam iusto vitae officiis. Rerum excepturi doloremque, eum deleniti corporis rem impedit, debitis similique sint esse culpa quam illo? Cum, sit deleniti voluptates cumque vel ex!</h3>
+          </div>
+          <div class="col-auto col-sm-4">
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://source.unsplash.com/user/feeypflanzen" class="d-block w-100 rounded" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://source.unsplash.com/user/feeypflanzen" class="d-block w-100 rounded" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://source.unsplash.com/user/feeypflanzen" class="d-block w-100 rounded" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="our-work" class="flex text-dark">
+      <div class=" container container-xl vh-100 text-center align-items-center justify-content-around">
+        <h1 class="fw-bolder">Our Works</h1>
+        
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

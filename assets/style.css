@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a, a:focus, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+#navbar {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  z-index: 10;
+}
+
+#hero {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+#about-us-title {
+  position: relative;
+  z-index: 2;
+}
+
+#about-us-title::before {
+  content: '#';
+  position: absolute;
+  bottom: -20px;
+  left: -40px;
+  z-index: -1;
+  color: #000;
+  font-size: 100pt;
+  font-weight: 900;
+  opacity: .2;
+}
+
+@media screen and (max-width: 768px) {
+  
+}
