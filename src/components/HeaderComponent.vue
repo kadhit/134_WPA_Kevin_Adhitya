@@ -11,31 +11,41 @@
       >
         <!-- Logo -->
         <div class="text-5xl font-serif">
-          <h1 class="font-light">hi<span class="font-bold">feey.</span></h1>
+          <router-link :to="{ name: 'Home' }">
+            <h1 class="font-light">hi<span class="font-bold">feey.</span></h1>
+          </router-link>
         </div>
         <div class="flex items-center justify-end space-x-12">
           <!-- Menu Items -->
-          <div class="hidden md:flex space-x-12 font-sans font-normal">
-            <a href="">About</a>
-            <a href="">Our Products</a>
-            <a href="">Contact</a>
+          <div class="hidden md:flex space-x-12 font-sans font-normal text-md">
+            <router-link :to="{ name: 'Home' }">About</router-link>
+            <router-link :to="{ name: 'Shop', hash: '#our-products' }"
+              >Our Products</router-link
+            >
+            <router-link :to="{ name: 'Contact Us' }">Contact Us</router-link>
           </div>
           <!-- Shop now Button -->
-          <a
-            href=""
+          <router-link
+            :to="{ name: 'Shop' }"
             class="hidden md:inline py-3 px-6 bg-emerald-500 text-white font-semibold rounded-full"
-            >Shop now</a
           >
+            Shop now
+          </router-link>
         </div>
         <button
           @click="isToggled = !isToggled"
           class="block relative md:hidden"
         >
-          <div v-if="!isToggled"><HamburgerIcon /></div>
-          <div v-else><CloseIcon /></div>
+          <div v-if="!isToggled">
+            <HamburgerIcon />
+          </div>
+          <div v-else>
+            <CloseIcon />
+          </div>
         </button>
       </div>
     </div>
+    <!-- Responsive -->
     <div
       :class="[!isToggled ? '-translate-y-full' : 'translate-y-0', navBarColor]"
       class="block absolute -z-10 w-screen h-screen top-20 right-0 md:hidden"
@@ -44,14 +54,17 @@
         :class="navBarMobileFont"
         class="flex flex-col -z-10 pt-8 space-y-8 justify-end items-center"
       >
-        <a href="">About</a>
-        <a href="">Our Products</a>
-        <a href="">Contact</a>
-        <a
-          href=""
-          class="py-3 px-6 bg-emerald-400 text-white font-semibold rounded-full"
-          >Shop now</a
+        <router-link :to="{ name: 'Home' }">About</router-link>
+        <router-link :to="{ name: 'Shop', hash: '#our-products' }"
+          >Our Products</router-link
         >
+        <router-link :to="{ name: 'Contact Us' }">Contact Us</router-link>
+        <router-link
+          :to="{ name: 'Shop' }"
+          class="py-3 px-6 bg-emerald-400 text-white font-semibold rounded-full"
+        >
+          Shop now
+        </router-link>
       </div>
     </div>
   </nav>
@@ -82,8 +95,8 @@ export default {
   computed: {
     navBarColor() {
       return this.scrollPosition > this.viewportHeight * 0.9
-        ? "bg-slate-800 text-slate-200 transition-all duration-500 ease-in-out"
-        : "bg-transparent text-slate-800 transition-all duration-500 ease-in-out";
+        ? "bg-slate-800 text-white transition-all duration-500 ease-in-out"
+        : "bg-transparent text-black transition-all duration-500 ease-in-out";
     },
     navBarMobileFont() {
       return this.scrollPosition > this.viewportHeight * 0.9

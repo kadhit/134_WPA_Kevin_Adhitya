@@ -1,28 +1,39 @@
 <template>
-  <div class="bg-slate-100">
-    <HeaderComponent />
-    <HeroComponent />
-    <VisionMission />
-    <ProductComponent />
-    <FooterComponent />
+  <HeaderComponent />
+  <LoadingComponent width="100" height="100" borderWidth="8" v-if="isLoading" />
+  <div v-else>
+    <router-view />
   </div>
+  <FooterComponent />
 </template>
 
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
-import HeroComponent from "./components/HeroComponent.vue";
-import VisionMission from "./components/VisionMission.vue";
-import ProductComponent from "./components/ProductComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
+import LoadingComponent from "./components/LoadingComponent.vue";
+
+import router from "./router";
 
 export default {
   name: "App",
   components: {
     HeaderComponent,
-    HeroComponent,
-    VisionMission,
-    ProductComponent,
     FooterComponent,
+    LoadingComponent,
+  },
+  data() {
+    return {
+      isLoading: false,
+    };
+  },
+  mounted() {
+    router.beforeEach(() => {
+      this.isLoading = true;
+    });
+
+    router.afterEach(() => {
+      this.isLoading = false;
+    });
   },
 };
 </script>
